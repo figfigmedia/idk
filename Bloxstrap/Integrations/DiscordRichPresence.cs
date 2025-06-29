@@ -301,7 +301,7 @@ namespace Bloxstrap.Integrations
                 {
                     buttons.Add(new Button
                     {
-                        Label = "Join server",
+                        Label = "feel free to join stinky",
                         Url = data.GetInviteDeeplink()
                     });
                 }
@@ -309,7 +309,7 @@ namespace Bloxstrap.Integrations
 
             buttons.Add(new Button
             {
-                Label = "See game page",
+                Label = "see what this stinky noob playing",
                 Url = $"https://www.roblox.com/games/{data.PlaceId}"
             });
 
