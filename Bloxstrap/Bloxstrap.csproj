@@ -7,8 +7,8 @@
     <UseWPF>true</UseWPF>
     <UseWindowsForms>True</UseWindowsForms>
     <ApplicationIcon>Bloxstrap.ico</ApplicationIcon>
-    <Version>2.9.1.2</Version>
-    <FileVersion>2.9.1.2</FileVersion>
+    <Version>2.9.2.1</Version>
+    <FileVersion>2.9.2.1</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
@@ -39,6 +39,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\CustomBootstrapperSchema.json" />
     <EmbeddedResource Include="Resources\CustomBootstrapperTemplate.xml" />
+    <EmbeddedResource Include="Resources\CustomBootstrapperTemplate_Blank.xml" />
+    <EmbeddedResource Include="Resources\CustomBootstrapperTemplate_Simple.xml" />
     <EmbeddedResource Include="Resources\Icon2008.ico" />
     <EmbeddedResource Include="Resources\Icon2011.ico" />
     <EmbeddedResource Include="Resources\Icon2017.ico" />

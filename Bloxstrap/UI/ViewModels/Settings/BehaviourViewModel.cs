@@ -9,16 +9,15 @@ namespace Bloxstrap.UI.ViewModels.Settings
 
         public BehaviourViewModel()
         {
-            
+
         }
 
-        public bool MultiInstances
+        public bool IsRobloxInstallationMissing => String.IsNullOrEmpty(App.RobloxState.Prop.Player.VersionGuid) && String.IsNullOrEmpty(App.RobloxState.Prop.Studio.VersionGuid);
+
+        public bool UpdateRoblox
         {
-            get => App.Settings.Prop.MultiInstanceLaunching;
-            set {
-                App.Settings.Prop.MultiInstanceLaunching = value;
-                App.FastFlags.SetPreset("Instances.WndCheck", value ? "0" : null);
-            }
+            get => App.Settings.Prop.UpdateRoblox && !IsRobloxInstallationMissing;
+            set => App.Settings.Prop.UpdateRoblox = value;
         }
 
         public bool ConfirmLaunches
@@ -31,6 +30,21 @@ namespace Bloxstrap.UI.ViewModels.Settings
         {
             get => App.Settings.Prop.ForceRobloxLanguage;
             set => App.Settings.Prop.ForceRobloxLanguage = value;
+        }
+
+        public bool BackgroundUpdates
+        {
+            get => App.Settings.Prop.BackgroundUpdatesEnabled;
+            set => App.Settings.Prop.BackgroundUpdatesEnabled = value;
+        }
+
+        public bool MultiInstances
+        {
+            get => App.Settings.Prop.MultiInstanceLaunching;
+            set {
+                App.Settings.Prop.MultiInstanceLaunching = value;
+                App.FastFlags.SetPreset("Instances.WndCheck", value ? "0" : null);
+            }
         }
 
         public CleanerOptions SelectedCleanUpMode
@@ -86,6 +100,12 @@ namespace Bloxstrap.UI.ViewModels.Settings
                 else
                     CleanerItems.Remove("FishstrapLogs");
             }
+        }
+        
+        public bool ForceRobloxReinstallation
+        {
+            get => App.State.Prop.ForceReinstall || IsRobloxInstallationMissing;
+            set => App.State.Prop.ForceReinstall = value;
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Bloxstrap.UI.Elements.Bootstrapper
             ["LinearGradientBrush"] = HandleXmlElement_LinearGradientBrush,
             ["RadialGradientBrush"] = HandleXmlElement_RadialGradientBrush,
 
+
             ["GradientStop"] = HandleXmlElement_GradientStop,
 
             //["PathFigure"] = HandleXmlElement_PathGeometry,

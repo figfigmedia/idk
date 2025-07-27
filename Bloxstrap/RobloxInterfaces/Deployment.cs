@@ -125,23 +125,14 @@ namespace Bloxstrap.RobloxInterfaces
             string location = BaseUrl;
 
             if (!IsDefaultChannel)
-            {
-                string channelName;
-
-                if (ApplicationSettings.GetSettings(nameof(ApplicationSettings.PCClientBootstrapper), Channel).Get<bool>("FFlagReplaceChannelNameForDownload"))
-                    channelName = "common";
-                else
-                    channelName = Channel.ToLowerInvariant();
-
-                location += $"/channel/{channelName}";
-            }
+                location += "/channel/common";
 
             location += resource;
 
             return location;
         }
 
-        public static async Task<ClientVersion> GetInfo(string ? channel = null)
+        public static async Task<ClientVersion> GetInfo(string? channel = null)
         {
             const string LOG_IDENT = "Deployment::GetInfo";
 
